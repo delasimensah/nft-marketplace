@@ -1,12 +1,14 @@
-import { Text, View } from "react-native";
+import { Stack } from "expo-router";
 
 export { ErrorBoundary } from "expo-router";
 
 const RootLayout = () => {
   return (
-    <View className="flex-1 items-center justify-center">
-      <Text>Root Layout</Text>
-    </View>
+    <Stack
+      screenOptions={{
+        headerShown: false,
+      }}
+    />
   );
 };
 
