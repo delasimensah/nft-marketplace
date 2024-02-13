@@ -4,9 +4,12 @@ import { Link } from "expo-router";
 const HomeScreen = () => {
   return (
     <View className="flex-1 items-center justify-center">
-      <Text>HomeScreen</Text>
+      <Text className="font-inter-bold text-3xl">HomeScreen</Text>
 
-      <Link href={{ pathname: "details", params: { name: "Bacon" } }}>
+      <Link
+        className="text-2xl"
+        href={{ pathname: "details", params: { name: "Bacon" } }}
+      >
         Go to Details
       </Link>
     </View>
