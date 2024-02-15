@@ -1,9 +1,9 @@
-import { TouchableOpacity, Text, Image, DimensionValue } from "react-native";
+import { TouchableOpacity, Text, Image } from "react-native";
 
 import { COLORS, SIZES, FONTS, SHADOWS } from "../constants";
 
 interface RectButtonProps {
-  minWidth: DimensionValue | undefined;
+  minWidth: number;
   fontSize: number | undefined;
   handlePress: () => void;
 }
@@ -15,31 +15,31 @@ interface CircleButtonProps {
   top: number;
 }
 
-// export const RectButton = (props:RectButtonProps) => {
-//   const {minWidth, handlePress, fontSize} = props
+export const RectButton = (props: RectButtonProps) => {
+  const { minWidth, handlePress, fontSize } = props;
 
-//   return <TouchableOpacity
-//   style={{
-//     backgroundColor: COLORS.primary,
-//     padding: SIZES.small,
-//     borderRadius: SIZES.extraLarge,
-//     minWidth: minWidth,
-//     ...props,
-//   }}
-//   onPress={handlePress}
-// >
-//   <Text
-//     style={{
-//       fontFamily: FONTS.semiBold,
-//       fontSize: fontSize,
-//       color: COLORS.white,
-//       textAlign: "center",
-//     }}
-//   >
-//     Place a bid
-//   </Text>
-// </TouchableOpacity>;
-// };
+  return (
+    <TouchableOpacity
+      className="bg-primary p-3"
+      style={{
+        borderRadius: SIZES.extraLarge,
+        minWidth,
+      }}
+      onPress={handlePress}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: fontSize,
+          color: COLORS.white,
+          textAlign: "center",
+        }}
+      >
+        Place a bid
+      </Text>
+    </TouchableOpacity>
+  );
+};
 
 export const CircleButton = ({
   imgUrl,
