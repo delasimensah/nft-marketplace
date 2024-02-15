@@ -63,7 +63,7 @@ const NFTCard = ({ data }: NFTCardProps) => {
             minWidth={120}
             fontSize={SIZES.font}
             handlePress={() =>
-              router.push({ pathname: "details", params: { data } })
+              router.push({ pathname: "details/[id]", params: { id: data.id } })
             }
           />
         </View>

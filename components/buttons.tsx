@@ -5,18 +5,20 @@ import { COLORS, SIZES, FONTS, SHADOWS } from "../constants";
 interface RectButtonProps {
   minWidth: number;
   fontSize: number | undefined;
-  handlePress: () => void;
+  handlePress?: () => void;
+  style?: any;
 }
 
 interface CircleButtonProps {
   imgUrl: any;
   handlePress?: () => void;
-  right: number;
-  top: number;
+  right?: number;
+  top?: number;
+  left?: number;
 }
 
 export const RectButton = (props: RectButtonProps) => {
-  const { minWidth, handlePress, fontSize } = props;
+  const { minWidth, handlePress, fontSize, style } = props;
 
   return (
     <TouchableOpacity
@@ -24,6 +26,7 @@ export const RectButton = (props: RectButtonProps) => {
       style={{
         borderRadius: SIZES.extraLarge,
         minWidth,
+        ...style,
       }}
       onPress={handlePress}
     >

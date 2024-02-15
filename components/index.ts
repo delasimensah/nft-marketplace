@@ -4,3 +4,6 @@ export { default as FocusedStatusBar } from "./focused-statusbar";
 export { default as SubInfo } from "./sub-info";
 export { default as EthPrice } from "./eth-price";
 export { default as NFTTitle } from "./nft-title";
+export { default as DetailsDesc } from "./details-description";
+export { default as DetailsBid } from "./details-bid";
+export { default as DetailsHeader } from "./details-header";
