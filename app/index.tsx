@@ -1,18 +1,33 @@
-import { View, Text } from "react-native";
-import { Link } from "expo-router";
+import { useState } from "react";
+import { View, SafeAreaView, FlatList } from "react-native";
+
+import { HomeHeader, NFTCard, FocusedStatusBar } from "@/components";
+
+import { NFTData, COLORS } from "@/constants";
 
 const HomeScreen = () => {
-  return (
-    <View className="flex-1 items-center justify-center">
-      <Text className="font-inter-bold text-3xl">HomeScreen</Text>
+  const [nftData, setNftData] = useState(NFTData);
 
-      <Link
-        className="text-2xl"
-        href={{ pathname: "details", params: { name: "Bacon" } }}
-      >
-        Go to Details
-      </Link>
-    </View>
+  return (
+    <SafeAreaView className="flex-1">
+      <FocusedStatusBar backgroundColor={COLORS.primary} />
+
+      <View className="flex-1">
+        <FlatList
+          data={nftData}
+          renderItem={({ item }) => <NFTCard data={item} />}
+          keyExtractor={(item) => item.id}
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={<HomeHeader />}
+        />
+      </View>
+
+      <View className="absolute bottom-0 left-0 right-0 top-0 -z-10">
+        <View className="bg-primary h-[300px]" />
+
+        <View className="flex-1 bg-white" />
+      </View>
+    </SafeAreaView>
   );
 };
 
